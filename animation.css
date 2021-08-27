@@ -1,0 +1,39 @@
+/*	Animations
+------------------------------------------ */
+
+body{
+    animation: bg-move 5s ease-out forwards;
+
+}
+.boat{
+    animation: rock-boat 3s ease-in-out infinite;
+}
+.boat::after{
+    animation: steam 4s 1s infinite;
+}
+.mike{
+    animation: mike-move 6s 6s ease-out forwards,
+               mike-float 3s infinite;
+}
+
+/*	Animations
+------------------------------------------ */
+
+@keyframes bg-move {
+    0%      {background-position: 100% -560px;}
+    100%    {background-position: -370% -160px;}
+}
+@keyframes rock-boat{
+    50%     {transform: rotate(-8deg) translateY(-20px);}
+}
+@keyframes steam{
+    40%,
+    60%     {opacity: 1;}
+    100%    {transform: translate(-15%,-35%) rotateZ(20deg);}
+}
+@keyframes mike-move{
+    100%    {left: 12%; top: 450px;}
+}
+@keyframes mike-float {
+    50%     {transform: rotateZ(5deg) translateY(-5px); }
+}
